@@ -16,12 +16,12 @@ export const Availability: React.FC<AvailabilityProps> = ({ availableHours, onHo
   return (
     <div>
       <h2>Disponibilidade de horários:</h2>
-      <ul className="flex space-x-2">
+      <ul className="flex space-x-2 overflow-x-scroll py-10">
         {availableHours.map((hour) => (
           <li
             key={hour}
-            className={`cursor-pointer rounded-full px-4 py-2 ${
-              selectedHour === hour ? 'bg-blue-500 text-white' : 'bg-gray-200'
+            className={`cursor-pointer rounded-full text-white px-4 py-2 ${
+              selectedHour === hour ? 'bg-primary ' : 'bg-secondary'
             }`}
             onClick={() => handleHourSelect(hour)}
           >
