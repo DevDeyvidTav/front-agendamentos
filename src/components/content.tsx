@@ -1,10 +1,22 @@
 import { CardScheduling } from "./CardScheduling";
+import { format, parseISO } from "date-fns";
+import ptBR from "date-fns/locale/pt-BR";
 
 
-interface ContentProps{
+interface SchedulesProps {
     date: string
+    id: string,
+    name: string,
+    phone: string,
+    userId: string
 }
-export function Content({date}: ContentProps) {
+interface ContentProps {
+    date: string,
+    data: SchedulesProps[]
+    isoDay: Date | string
+
+}
+export function Content({ date, data, isoDay }: ContentProps) {
     function deleteCard() {
 
     }
@@ -12,53 +24,30 @@ export function Content({date}: ContentProps) {
 
     }
     return (
+
         <div className="w-1/2 flex overflow-y-scroll items-center max-h-full flex-col gap-2 pt-10 h-full">
             {date && <div className="text-2xl text-primary font-bold">
-                    {String(date)}
-                </div>}
-            <CardScheduling
-                name="Deyvid"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="819970210434"
-                time="10:00" />
-            <CardScheduling
-                name="Teste"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="81999999999"
-                time="11:00" />
-                            <CardScheduling
-                name="Teste"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="81999999999"
-                time="11:00" />
-                            <CardScheduling
-                name="Teste"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="81999999999"
-                time="11:00" />
-                            <CardScheduling
-                name="Teste"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="81999999999"
-                time="11:00" />
-                            <CardScheduling
-                name="Teste"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="81999999999"
-                time="11:00" />
-                            <CardScheduling
-                name="Teste"
-                onDelete={deleteCard}
-                onEdit={editCard}
-                phone="81999999999"
-                time="11:00" />
+                {String(date)}
+            </div>}
+            {
+                data?.map((data, i) => {
+                    const formatedData = format(parseISO(data.date), 'HH:mm', { locale: ptBR })
+                    return (
+                        <CardScheduling
+                            date={isoDay}
+                            key={i}
+                            id={data.id}
+                            name={data.name}
+                            onDelete={deleteCard}
+                            onEdit={editCard}
+                            phone={data.phone}
+                            time={formatedData} />
+                    )
+                })
+            }
 
         </div>
+
+
     )
 }

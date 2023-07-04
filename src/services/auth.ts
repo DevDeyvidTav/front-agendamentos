@@ -10,7 +10,6 @@ interface signInProps{
 
 export async function signIn(data: signInProps){
     try {
-        console.log(data)
         const response = await axios.post('http://localhost:3000/users/auth', data)
         const {token} = response.data
         Cookies.set('token', token)
@@ -24,7 +23,6 @@ export async function signIn(data: signInProps){
 
 export async function Register(data: signInProps){
     try {
-        console.log(data)
         const response = await axios.post('http://localhost:3000/users/', data)
         window.location.pathname = "/"
         return response.data

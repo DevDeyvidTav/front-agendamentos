@@ -15,14 +15,14 @@ const inter = Montserrat({ subsets: ['latin'] })
 export default function Home() {
   const { register, handleSubmit, formState: { errors } } = useForm({ resolver: yupResolver(schemaAuth) });
   const handleLogin = async (credentials: any) => {
-    console.log(credentials)
+
     const response = await signIn(credentials)
     console.log(response)
   }
 
   return (
     <main
-      className={`w-screen h-screen bg-gradient-to-b flex from-primary to-secondary ${inter.className}`}
+      className={`w-screen h-screen flex bg-gradient-to-b from-primary to-secondary ${inter.className}`}
     >
       <div className='w-1/2 flex justify-center items-center' >
         <Logo />

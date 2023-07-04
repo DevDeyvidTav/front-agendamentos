@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { Header } from "@/components/Header";
 import { Aside } from "@/components/aside";
+import { GetServerSideProps } from "next";
 
 export default function UserProfile() {
     const [name, setName] = useState("John Doe");
@@ -55,4 +56,15 @@ export default function UserProfile() {
             </div>
         </div>
     );
+}
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+    if (!req.cookies.token) {
+        res.setHeader('Location', '/'),
+            res.statusCode = 302
+        res.end()
+    }
+
+    return {
+        props: {}
+    }
 }

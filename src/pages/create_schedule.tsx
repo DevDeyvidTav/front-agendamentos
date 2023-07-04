@@ -4,6 +4,7 @@ import { Availability } from "@/components/availability";
 import { ProgressBar } from "@/components/progressBar";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
+import { GetServerSideProps } from "next";
 import { Montserrat } from "next/font/google";
 import { useState } from "react";
 import { DayPicker } from "react-day-picker";
@@ -131,4 +132,15 @@ export default function Home() {
         </div>
       </div>
     )
+}
+export const getServerSideProps: GetServerSideProps = async ({ req, res }) => {
+  if (!req.cookies.token) {
+      res.setHeader('Location', '/'),
+          res.statusCode = 302
+      res.end()
+  }
+
+  return {
+      props: {}
+  }
 }
