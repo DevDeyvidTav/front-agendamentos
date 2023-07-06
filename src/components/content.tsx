@@ -38,8 +38,6 @@ export function Content({ date, data, isoDay }: ContentProps) {
                             key={i}
                             id={data.id}
                             name={data.name}
-                            onDelete={deleteCard}
-                            onEdit={editCard}
                             phone={data.phone}
                             time={formatedData} />
                     )

@@ -15,7 +15,7 @@ const montSerrat = Montserrat({ subsets: ['latin'] })
 
 export default function Home() {
     const [date, setDate] = useState<Date>()
-
+    console.log(date)
     const isWeekend = (date: Date) => {
         const day = date.getDay()
         return day === 0 || day === 6

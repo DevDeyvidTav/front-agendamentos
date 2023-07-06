@@ -3,7 +3,10 @@ import { useRouter } from "next/router";
 import { Header } from "@/components/Header";
 import { Aside } from "@/components/aside";
 import { GetServerSideProps } from "next";
+import { Montserrat } from "next/font/google";
 
+
+const montSerrat = Montserrat({subsets: ["latin"]})
 export default function UserProfile() {
     const [name, setName] = useState("John Doe");
     const [email, setEmail] = useState("johndoe@example.com");
@@ -20,7 +23,7 @@ export default function UserProfile() {
     };
 
     return (
-        <div className="w-screen overflow-hidden max-w-full h-screen">
+        <div className={` ${montSerrat.className} w-screen overflow-hidden max-w-full h-screen`}>
             <Header />
             <div className="flex mt-16  w-full h-full">
                 <Aside />
