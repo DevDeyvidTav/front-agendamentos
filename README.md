@@ -1,38 +1,90 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Agenda 📅
 
-## Getting Started
+Um projeto front-end para treinar soluções de agendamento com datas e CRUD.
 
-First, run the development server:
+## Tecnologias Utilizadas
 
+- HTML
+- CSS
+- JavaScript
+- Next.js
+- React
+- React Icons
+- React Day Picker
+- React Hook Form
+- Tailwind CSS
+- TypeScript
+- E outras bibliotecas listadas no arquivo `package.json`
+
+## Pré-requisitos
+
+Antes de executar o projeto, certifique-se de ter as seguintes dependências instaladas:
+
+- Node.js
+- npm (gerenciador de pacotes do Node.js)
+
+## Instalação
+
+1. Clone e execute a API desenvolvida para esse projeto, use a documentação da mesma para instalar as dependências e configurar o setup:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+git clone https://github.com/DevDeyvidTav/api-solid-agendamentos
+```
+2. Clone este repositório:
+```bash
+git clone https://github.com/DevDeyvidTav/front-agendamentos
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Instale as dependências:
+```bash
+cd front-agendamentos
+npm install
+```
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Utilização
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+1. Execute a aplicação no seu terminal
+```bash
+npm run dev
+```
+## Funcionalidades Principais
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<ul>
+  <li>Autenticação de usuários com JWT 🔒</li>
+  <li>Registro de usuários 📝</li>
+  <li>Edição de usuário autenticado ✏️</li>
+  <li>Obtenção de usuário por ID no banco de dados 🔍</li>
+  <li>Agendamento de horários com formulário de 3 etapas 🗓️</li>
+  <li>Edição e exclusão de agendamentos ✏️❌</li>
+  <li>Listagem de agendamentos por usuário 🗒️</li>
+  <li>Utilização de React Day Picker para seleção de datas 📅</li>
+  <li>Utilização de date-fns para formatação de datas e horários 🕒</li>
+  
+</ul>
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Telas
+### Tela de Login
+<img src="./public/login.png" alt="Tela de Login" width="400px">
 
-## Learn More
+### Tela de Registro
+<img src="./public/register.png" alt="Tela de Registro" width="400px">
 
-To learn more about Next.js, take a look at the following resources:
+### Lista de Agendamentos por Usuário
+<img src="./public/schedules.png" alt="Lista de Agendamentos" width="400px">
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Criar Agendamento
+<img src="./public/create_schedules.png" alt="Criar Agendamento" width="400px">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Editar Agendamento
+<img src="./public/edit_schedules.png" alt="Editar Agendamento" width="400px">
 
-## Deploy on Vercel
+### Perfil de Usuário
+<img src="./public/profile.png" alt="Perfil de Usuário" width="400px">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contribuição
+Você pode contribuir com o projeto enviando uma issue para relatar problemas ou sugerir novas features. Também pode entrar em contato através do email devdeyvid2022@gmail.com. 🤝
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Autor
+Este projeto foi desenvolvido por Deyvid Tavares. 👨‍💻
+
+## Licença
+Este projeto não possui uma licença específica no momento. 📜
